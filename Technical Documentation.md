@@ -1,8 +1,3 @@
-Absolutely! Here's your full **README-style documentation** formatted in Markdown (`README.md`) for the `ChickenVaultSettlement` smart contract module for ChickChain:
-
----
-
-````markdown
 # 🐔 ChickChain | ChickenVaultSettlement – Fiat–Crypto Escrow Smart Contract
 
 ---
@@ -34,7 +29,6 @@ D --> E[Smart Contract Releases USDC to Farmer Wallet]
 E --> F[Off-Ramp Service Converts to Naira]
 F --> G[Farmer Receives Naira]
 ```
-````
 
 ---
 

@@ -2,7 +2,7 @@
 
 ---
 
-# 🧱 Architecture Diagram (Mermaid.js)
+# 🧱 Architecture Diagram
 
 ```mermaid
 flowchart TD

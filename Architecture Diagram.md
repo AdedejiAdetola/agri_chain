@@ -6,7 +6,7 @@
 
 ````mermaid
 flowchart TD
-    A[User Wallet<br/>(Naira / Fiat Payment)] --> B[On-Ramp Provider<br/>(Naira → USDC on Solana)]
+    A[User Wallet(Naira / Fiat Payment)] --> B[On-Ramp Provider<br/>(Naira → USDC on Solana)]
     B --> C[ChickenVault Smart Contract (Solana)<br/>• Holds USDC<br/>• Maps Order ID to Farmer<br/>• Emits audit events]
     C --> D1[Delivery Oracle System<br/>(Confirms Delivery)]
     C --> D2[Off-Ramp Provider<br/>(USDC → Naira to Farmer Bank)]

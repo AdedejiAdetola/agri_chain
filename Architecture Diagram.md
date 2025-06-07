@@ -1,12 +1,9 @@
-```markdown
 # 🐔 AgriChain Protocol — Fiat-Crypto Settlement Vault
 
 ---
 
 ## 🧱 Architecture Diagram
-```
 
-```
                              +-------------------------+
                              |      User Wallet        |
                              |  (Naira/Fiat Payment)   |
@@ -29,7 +26,6 @@
          +----------------+-------------------+
          |                                    |
          v                                    v
-```
 
 +-------------------------+ +-------------------------------+
 \| Delivery Oracle System | | Off-Ramp Provider |
@@ -42,41 +38,45 @@ v
 \| Farmer’s Solana wallet |
 +----------------------------+
 
-````
-
 ---
 
 ## 📜 Protocol POC Requirements for ChickChain
 
-
 ### 🔐 Admin + Configuration
+
 - The protocol shall allow an **admin wallet** to manage global parameters including timeout, off-ramp providers, and delivery oracles.
 - The protocol shall allow the admin to **pause/resume** vault operations.
 
 ### 🛒 Order Creation & Vaulting
+
 - The protocol shall allow users to initiate orders by paying with Naira through an on-ramp service.
 - The protocol shall allow the system to **receive USDC** from on-ramp and map it to an order.
 - The protocol shall **vault USDC** and await delivery confirmation.
 - On-chain event logs shall be emitted when vaulting occurs.
 
 ### 🚚 Delivery & Oracle Confirmation
+
 - The protocol shall allow a **designated oracle address** to confirm delivery.
 - Confirmation may be triggered manually or programmatically by trusted sources.
 
 ### 💸 Fund Release & Settlement
+
 - Upon delivery confirmation, the protocol shall **release USDC** to the mapped farmer wallet.
 - The protocol shall emit **release events** for transparency.
 - The protocol shall allow **integration with off-ramp APIs** for converting USDC → Naira to farmer’s bank account.
 
 ### 🔄 Refund / Reversal Mechanism
+
 - If delivery is unconfirmed within a timeout window, users may trigger a **refund flow**.
 - USDC is returned to the buyer’s wallet if no valid confirmation occurs.
 
 ### 📑 Traceability & Auditing
+
 - A hash of the order metadata (e.g., product type, farm ID, timestamp) shall be stored on-chain.
 - Status queries and transaction history shall be publicly accessible.
 
 ### 💱 Token Conversion & Pricing
+
 - The protocol shall interface with **Solana price oracles (e.g., Pyth)** to compute Naira ↔ USDC rates.
 - FX updates shall be dynamic and reflected in real-time conversions.
 
@@ -88,7 +88,7 @@ v
 
 ```rust
 createOrder(order_id, farmer_wallet, amount_usdc)
-````
+```
 
 - Maps USDC vault to order ID and target wallet
 

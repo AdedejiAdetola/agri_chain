@@ -2,13 +2,13 @@
 
 ---
 
-## 📌 Module Name: `ChickenVaultSettlement`
+## 📌 Module Name: `AgricultureVaultSettlement`
 
 ---
 
 ## 🧠 Purpose
 
-The `ChickenVaultSettlement` module securely and transparently facilitates payments between **end-users paying in local fiat (e.g., Naira)** and **poultry suppliers/farmers** using a **Solana smart contract vault**.
+The `AgricultureVaultSettlement` module securely and transparently facilitates payments between **end-users paying in local fiat (e.g., Naira)** and **poultry suppliers/farmers** using a **Solana smart contract vault**.
 
 The system enables:
 

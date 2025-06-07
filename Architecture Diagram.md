@@ -4,39 +4,39 @@
 
 ## 🧱 Architecture Diagram
 
-                             +-------------------------+
-                             |      User Wallet        |
-                             |  (Naira/Fiat Payment)   |
-                             +-----------+-------------+
-                                         |
-                                         v
-                       +--------------------------+
-                       |    On-Ramp Provider      |
-                       | (Naira → USDC on Solana) |
-                       +-----------+--------------+
-                                   |
-                                   v
-               +------------------------------------------+
-               |     ChickenVault Smart Contract (Solana) |
-               |  • Holds USDC until delivery is confirmed|
-               |  • Maps Order ID to Farmer’s Wallet      |
-               |  • Emits audit events                    |
-               +-----------+------------------------------+
-                           |
-         +----------------+-------------------+
-         |                                    |
-         v                                    v
+                                +-------------------------+
+                                |      User Wallet        |
+                                |  (Naira / Fiat Payment) |
+                                +-----------+-------------+
+                                            |
+                                            v
+                          +-------------------------------+
+                          |       On-Ramp Provider        |
+                          | (Naira → USDC on Solana)      |
+                          +---------------+---------------+
+                                          |
+                                          v
+              +----------------------------------------------------+
+              |     ChickenVault Smart Contract (Solana)           |
+              |  • Holds USDC until delivery is confirmed          |
+              |  • Maps Order ID to Farmer’s Wallet                |
+              |  • Emits audit events                              |
+              +----------------+-----------------------------------+
+                               |
+              +----------------+------------------+
+              |                                   |
+              v                                   v
 
-+-------------------------+ +-------------------------------+
-\| Delivery Oracle System | | Off-Ramp Provider |
-\| (Delivery confirmation) | | (USDC → Naira to Farmer Bank) |
-+-----------+-------------+ +-------------------------------+
++-----------------------------+ +-------------------------------+
+| Delivery Oracle System | | Off-Ramp Provider |
+| (Confirms Delivery Status) | | (USDC → Naira to Farmer Bank) |
++-------------+---------------+ +-------------------------------+
 |
 v
-+----------------------------+
-\| Trigger USDC release to |
-\| Farmer’s Solana wallet |
-+----------------------------+
++-------------------------------+
+| Trigger USDC Release to |
+| Farmer’s Solana Wallet |
++-------------------------------+
 
 ---
 

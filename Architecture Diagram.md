@@ -4,7 +4,7 @@
 
 # 🧱 Architecture Diagram (Mermaid.js)
 
-````mermaid
+```mermaid
 flowchart TD
     A[User Wallet - Naira or Fiat Payment] --> B[On-Ramp Provider - Naira to USDC on Solana]
     B --> C[ChickenVault Smart Contract - Holds USDC]
@@ -12,7 +12,7 @@ flowchart TD
     C --> D2[Off-Ramp Provider - USDC to Naira]
     D1 --> E[Release USDC to Farmer's Wallet]
     D2 --> F[Farmer Receives Naira in Bank Account]
-
+```
 
 ---
 
@@ -64,7 +64,7 @@ flowchart TD
 
 ```rust
 createOrder(order_id, farmer_wallet, amount_usdc)
-````
+```
 
 - Maps USDC vault to order ID and target wallet
 

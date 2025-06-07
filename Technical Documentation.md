@@ -1,14 +1,14 @@
-# 🐔 ChickChain | ChickenVaultSettlement – Fiat–Crypto Escrow Smart Contract
+# 🐔 AgriChain | AgriVaultSettlement – Fiat–Crypto Escrow Smart Contract
 
 ---
 
-## 📌 Module Name: `AgricultureVaultSettlement`
+## 📌 Module Name: `AgriVaultSettlement`
 
 ---
 
 ## 🧠 Purpose
 
-The `AgricultureVaultSettlement` module securely and transparently facilitates payments between **end-users paying in local fiat (e.g., Naira)** and **poultry suppliers/farmers** using a **Solana smart contract vault**.
+The `AgriVaultSettlement` module securely and transparently facilitates payments between **end-users paying in local fiat (e.g., Naira)** and **poultry suppliers/farmers** using a **Solana smart contract vault**.
 
 The system enables:
 

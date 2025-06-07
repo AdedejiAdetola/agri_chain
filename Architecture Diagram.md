@@ -2,41 +2,16 @@
 
 ---
 
-## 🧱 Architecture Diagram
+# 🧱 Architecture Diagram
 
-                                +-------------------------+
-                                |      User Wallet        |
-                                |  (Naira / Fiat Payment) |
-                                +-----------+-------------+
-                                            |
-                                            v
-                          +-------------------------------+
-                          |       On-Ramp Provider        |
-                          | (Naira → USDC on Solana)      |
-                          +---------------+---------------+
-                                          |
-                                          v
-              +----------------------------------------------------+
-              |     ChickenVault Smart Contract (Solana)           |
-              |  • Holds USDC until delivery is confirmed          |
-              |  • Maps Order ID to Farmer’s Wallet                |
-              |  • Emits audit events                              |
-              +----------------+-----------------------------------+
-                               |
-              +----------------+------------------+
-              |                                   |
-              v                                   v
+````mermaid
+flowchart TD
+    A[User Wallet<br/>(Naira / Fiat Payment)] --> B[On-Ramp Provider<br/>(Naira → USDC on Solana)]
+    B --> C[ChickenVault Smart Contract (Solana)<br/>• Holds USDC<br/>• Maps Order ID to Farmer<br/>• Emits audit events]
+    C --> D1[Delivery Oracle System<br/>(Confirms Delivery)]
+    C --> D2[Off-Ramp Provider<br/>(USDC → Naira to Farmer Bank)]
+    D1 --> E[Trigger USDC Release<br/>to Farmer’s Solana Wallet]
 
-+-----------------------------+ +-------------------------------+
-| Delivery Oracle System | | Off-Ramp Provider |
-| (Confirms Delivery Status) | | (USDC → Naira to Farmer Bank) |
-+-------------+---------------+ +-------------------------------+
-|
-v
-+-------------------------------+
-| Trigger USDC Release to |
-| Farmer’s Solana Wallet |
-+-------------------------------+
 
 ---
 
@@ -88,7 +63,7 @@ v
 
 ```rust
 createOrder(order_id, farmer_wallet, amount_usdc)
-```
+````
 
 - Maps USDC vault to order ID and target wallet
 
